@@ -1,0 +1,119 @@
+DATA DICTIONARY GENERATOR
+v. 2.0
+Last updated: September 1, 2015
+
+I: INTRODUCTION
+The Data Dictionary Generator (DDG) is a tool that helps project editors 
+quickly generate encoding documentation. It reads in a TEI-encoded file, and 
+compares that to both the official TEI Guidelines and any local guidelines (if 
+provided) and outputs an HTML-formatted report that can be viewed on a computer
+or published to the web.
+
+This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 
+International License. To view a copy of this license, visit
+http://creativecommons.org/licenses/by-sa/4.0/.
+
+Joe Easterly
+Digital Humanities Librarian
+River Campus Libraries, University of Rochester
+
+Special thanks to:
+ * Syd Bauman, Northeastern University
+ * Martin Holmes, University of Victoria
+ * Sean Morris, University of Rochester
+
+II: SYSTEM REQUIREMENTS
+* A recent version of the oXygen XML Editor, or Saxon HE 9.* or later.
+The instructions in this readme file assume that you are using oXygen.
+
+III: INSTALLATION
+The Data Dictionary Generator includes three files, which can be saved anywhere
+on your computer. By default, the DDG assumes that all three files are in the
+same folder. 
+ • data_dictionary.xslt: the dictionary generation script
+ • p5subset.xml: a relatively recent copy of the official TEI P5 Guidelines.
+   This file is included so that the Data Dictionary Generator will function 
+   properly on download, however you are strongly encouraged to replace it with
+   a fresh copy from http://www.tei-c.org/release/xml/tei/odd/p5subset.xml
+ • sample_dictionary.xml: a template for storing customized dictionary entries.
+   This file is needed only if you want to insert your own element definitions 
+   alongside definitions drawn from the TEI guidelines.
+
+IV: CONFIGURATION
+In oXygen, the DDG operates using oXygen's Transformation Scenarios. This 
+readme assumes basic familiarity with Transformation Scenarios, however 
+detailed video tutorials are available at http://humanities.lib.rochester.edu.
+1) In Oxygen, Configure a new transformation scenario of the type 
+   "XML transformation with XSLT."
+
+2) In the New scenario dialog box, under Name, give it a name such as Data 
+   Dictionary
+
+3) The New scenario dialog box is divided into three tabs, and two of them 
+   will need some configuration: XSLT and Output. Under XSLT:
+   a) XML URL: ${currentFileURL} (should be default value)
+   b) XSL URL: click "Browse for local file" and choose your copy of 
+      data_dictionary.xslt
+   c) Transformer: Saxon-HE 9.* (currently 9.6.0.5)
+   d) Parameters: Only needed if you don't want to keep all three DDG files in
+      the same folder. Click on Parameters and a Configure parameters dialog
+      box should appear. Then click "New," which will spawn an Add Parameter
+      under Name, put dictFile, and under Value, put the path to your
+      sample_dictionary.xml file. You can use ${home} as a shortcut to your
+      home directory, for example: ${home}/Desktop/sample_dictionary.xml
+      Repeat the same process for the p5subset.xml file, except use the
+      parameter name P5source
+
+4) Under Output:
+   a) Choose Save as, and then put in a path to the desired HTML file. You can
+      click "Browse for local file" to choose a spot, or type a path in by hand
+      For example, ${homeDir}/Desktop/sample_dictionary.xml
+   b) Check "Open in Browser/System Application" and click the "Saved file"
+      radio button.
+   c) Under "Show in results view as", uncheck "XML"
+   d) Click OK , and then in the "Configure Transformation Scenario(s) box, 
+      click Save and close. You're ready to go!
+
+V: OPERATION
+1) Click "Apply Transformation Scenarios". A tooltip for that button should 
+   have appeared which mentioned the assocatiated scenario (Data Dictonary).
+2) After a couple moments (depending on the the size of your TEI file), a
+   data dictionary should appear in your web browser. You can copy or save
+   this file anywhere, or even publish it to the web.
+   
+VI: ADVANCED FEATURES: USING THE SAMPLE DICTIONARY
+The Data Dictionary Generator comes with a sample dictionary, which you can use
+to provide your own element definitions and guidelines. To create an entry in
+the sample dictionary, add a <div> tag to <body> in the same fashion as below:
+
+   <div corresp="ab" type="element">
+      <div type="entry">
+         <span type="definition">Your definition goes here.</span>
+      </div>
+   </div>
+
+Replace the value of @corresp with the name of your element or attribute, and 
+under @type in the same line, indicate whether its an element or an attribute. 
+Then, put your definition inside <span type="definition">. If you re-run the
+Data Dictionary Generator script, your entry should appear— but remember, 
+entries only appear if the corresponding element or attribute is used in your
+TEI file.
+The sample dictionary includes examples and explanatory comments of other 
+features that can be added to your entries -- just copy and paste the 
+appropriate code as needed:
+ * hyperlinks
+ * code examples
+ * usage notes
+ * "see also" notes / cross-references
+
+VII: ADVANCED FEATURES: SCRIPT PARAMETERS
+In addition to the dictFile and P5source parameters mentioned above, the DDG
+supports additional parameters which might be useful for advanced users or for
+running the script from the command line:
+ * debug: turns on messaging, which displays the script's current step.
+ * dictFile: location of the dictionary file to be used
+ * displayModule: incorporates attribute module and class data in the entries
+ * outputFormat: either 'html' or 'tei' -- the dictionary can alternatively
+   be generated as a TEI file, so users can provide their own styling
+ * P5source: location of the TEI P5 Guidelines file (p5subset.xml)
+ * teiOutPath: location of the TEI file, if using TEI output.
