@@ -1,0 +1,2351 @@
+<?xml version="1.0" encoding="UTF-8"?><html xmlns="http://www.w3.org/1999/xhtml">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <title>Data Dictionary</title><style type="text/css">
+          .body{
+          width:700px;
+          margin-left:auto;
+          margin-right:auto;
+          }
+          
+          /* unvisited link */
+          a:link {
+          text-decoration: none;
+          color: #29aba4;
+          }
+          /* visited link */
+          a:visited {
+          text-decoration: none;
+          color: #29aba4;
+          }
+          /* mouse over link */
+          a:hover {
+          text-decoration: none;
+          color: #171409;
+          /*border-bottom: 0.125em solid #000;*/
+          background-color: #29aba4;
+          padding: 4px;
+          color: #FFF;
+          }
+          /* selected link */
+          a:active {
+          color: #FFF;
+          }
+          
+          /* Bulleted Items */
+          ul{list-style-type: none; margin: 0; padding: 0;}
+          
+          /* Back to top botton */
+          .go-top{
+          font-family: 'Martel', serif;
+          position: fixed;
+          bottom: 2em;
+          right: 2em;
+          text-decoration: none;
+          background-color: #eb7260;
+          padding: 15px;
+          border: none!important;
+          color: #FFF!important;
+          opacity: 0.8;
+          }
+          .go-top:hover{
+          font-family: 'Martel', serif;
+          opacity: 1;
+          position: fixed;
+          text-decoration: none;
+          background-color: #eb7260;
+          padding: 15px;
+          border: none!important;
+          color: #FFF!important;
+          opacity: 1;
+          }
+          .title{
+          font-size:xx-large;
+          font-weight:bold;
+          margin-top:50px;
+          }
+          .header{
+          padding-top:0.5em;
+          font-family: 'Martel', serif;
+          font-size: 12px;
+          border-bottom: solid 1px lightgray;
+          margin-bottom: 16px;
+          margin-top: 70px;
+          /* This forces section to break to the next line regardless of floats */
+          clear: both;
+          
+          }
+          /* Hero cover potion */
+          .hero{  
+          width:100%;
+          background-color: #48A6A1;
+          margin: 0px;
+          }
+          /* Description Paragraph */
+          .tagline{  
+          width:700px;
+          margin-left:auto;
+          margin-right:auto;
+          margin-bottom:50px;
+          margin-top:0px;
+          padding: 55px 0px 55px 0px;
+          font-family: 'Martel', serif;
+          font-size: 26px;
+          color: #FFF;
+          }
+          /* Table of Contents */
+          .attributeTOCLink{font-size: 18px;}
+          .elementTOCLink{color: gray;}
+          
+          /* Columns */
+          div.columns       { width: 700px; font-size: 20px; line-height: 32px;}
+          div.columns div   { width: 155px;  float: left; }
+          div.grey          { background-color: white; }
+          div.red           { background-color: #white; }
+          div.clear         { clear: both; }
+          
+          .name{
+          font-size:large;
+          font-weight:700;
+          font-size:40px;
+          }
+          .count{
+          width:50px;
+          display:inline-block;
+          float:right;
+          text-align:right;
+          padding-right:0.5em;
+          font-size:medium;
+          }
+          .project{
+          font-size:medium;
+          margin-top:.5em;
+          
+          }
+          .tei_guidelines{
+          font-size:medium;
+          margin-top:.5em;
+          
+          }
+          .tei_description{
+          font-family: 'Martel', serif;
+          font-family: 
+          font-size:medium;
+          padding-bottom: 10px;
+          display: block;
+          }
+          .label{
+          font-family: 'Martel', serif;
+          font-weight:900;
+          font-size: 15px;
+          }
+          .tei_link{
+          font-size:medium;
+          font-style:italic;
+          }
+          
+          .entry_contents_local{
+          font-size:medium;
+          margin-top:.5em;
+          
+          }
+          .local_description{
+          font-size:medium;
+          font-family: 'Martel', serif;
+          display: block;
+          padding-bottom: 10px;
+          }
+          
+          .see_also{
+          font-size:medium;
+          font-family: 'Martel', serif;
+          display: inline;
+          padding-bottom: 10px;
+          }
+          .see_also_label{
+          font-size:medium;
+          font-family: 'Martel', serif;
+          font-style:italic;
+          display: inline;
+          padding-bottom: 10px;
+          }
+          
+          .usage{
+          font-size:medium;
+          font-family: 'Martel', serif;
+          display: inline;
+          padding-bottom: 10px;
+          }
+          .usage_label{
+          font-size:medium;
+          font-family: 'Martel', serif;
+          font-style:italic;
+          display: inline;
+          padding-bottom: 10px;
+          }
+          
+          .examples{
+          font-size:medium;
+          font-family: 'Martel', serif;
+          display: block;
+          padding-bottom: 10px;
+          }
+          .entry_struct_notes{
+          font-size:medium;
+          margin-top:0em;
+          margin-left:0.5em;
+          }
+          .struct_note_marker{
+          font-weight:600;
+          }
+          .entry_local_contained_by{
+          font-size:medium;
+          }
+          .entry_local_may_contain{
+          font-size:medium;
+          }
+          .entry_local_attributes{
+          font-size:medium;
+          }
+          
+          /* Styles for 3 boxes under each element */
+          .context{line-height: 25px; }
+          .attributes {overflow: auto;margin-bottom: 15px; float: left; padding-right: 30px;}
+          .parents{overflow: auto; margin-bottom: 15px; float: left; padding-right: 30px;}
+          .children{overflow: auto; margin-bottom: 15px;}
+          
+          /* Handling of example XML code embedded in pages. */
+          
+          pre.teiCode{
+          white-space:pre-wrap;
+          border-top: solid lightgray 1px;
+          border-bottom: solid lightgray 1px;
+          padding: 13px 0px 0px 20px;
+          background-color: #f2ede7;
+          } 
+          
+          /* Divider between name and gloss */
+          .divider{color:lightgray; font-size: 40px;}
+          
+          /* We want our XML code to look like code. */
+          .xmlTag,
+          .xmlAttName,
+          .xmlAttVal,
+          .teiCode{
+          font-family:monospace;
+          } 
+          
+          /* We want our XML code text to be bold. */
+          .xmlTag,
+          .xmlAttName,
+          .xmlAttVal{
+          font-weight:bold;
+          } 
+          
+          /* We want syntax highlighting. */
+          .xmlTag{
+          color:#000099;
+          }
+          .xmlAttName{
+          color:#f5844c;
+          }
+          .xmlAttVal{
+          color:#993300;
+          }
+          
+          
+          /* Joe's new tags (Sean: please keep and/or tweak) */
+          .giTag{
+          color:#000099;
+          font-size:medium;
+          font-size:18px;
+          font-family:monospace;
+          }
+          .attTag{
+          color:#f5844c;
+          font-size:medium;
+          font-size:18px;
+          font-family:monospace;
+          }
+          .gloss{
+          color:#48A6A1;
+          font-size:large;
+          font-size:30px;
+          font-weight:300;
+          }
+        </style><link href="http://fonts.googleapis.com/css?family=Martel:400,200,300,600,800,700,900" rel="stylesheet" type="text/css" />
+   </head>
+   <body>
+      <div class="hero">
+         <div class="tagline">
+            <h1>Data Dictionary</h1>Descriptions of each element and attribute used in the Northwind Traders Papers
+            Project.
+         </div>
+      </div>
+      <div class="body">
+         <div class="columns">
+            <div class="red">
+               <ul>
+  <li><a href="#e.TEI">TEI</a></li> 
+  <li><a href="#e.ab">ab</a></li> 
+  <li><a href="#e.abbr">abbr</a></li> 
+  <li><a href="#e.add">add</a></li> 
+  <li><a href="#e.additions">additions</a></li> 
+  <li><a href="#e.body">body</a></li> 
+  <li><a href="#e.change">change</a></li> 
+  <li><a href="#e.choice">choice</a></li> 
+  <li><a href="#e.corr">corr</a></li> 
+  <li><a href="#e.correspAction">correspAction</a></li> 
+  <li><a href="#e.correspDesc">correspDesc</a></li> 
+  <li><a href="#e.date">date</a></li> 
+  <li><a href="#e.del">del</a></li> 
+  <li><a href="#e.distributor">distributor</a></li> 
+  <li><a href="#e.encodingDesc">encodingDesc</a></li> 
+  <li><a href="#e.expan">expan</a></li> 
+  <li><a href="#e.fileDesc">fileDesc</a></li> 
+  <li><a href="#e.gap">gap</a></li> 
+  <li><a href="#e.gi">gi</a></li> 
+  <li><a href="#e.graphic">graphic</a></li> 
+  <li><a href="#e.handShift">handShift</a></li>           
+               </ul>
+            </div>
+            <div class="red">
+               <ul>     
+  <li><a href="#e.hi">hi</a></li> 
+  <li><a href="#e.history">history</a></li> 
+  <li><a href="#e.institution">institution</a></li> 
+  <li><a href="#e.langUsage">langUsage</a></li> 
+  <li><a href="#e.language">language</a></li> 
+  <li><a href="#e.lb">lb</a></li> 
+  <li><a href="#e.listChange">listChange</a></li> 
+  <li><a href="#e.listPrefixDef">listPrefixDef</a></li> 
+  <li><a href="#e.msDesc">msDesc</a></li> 
+  <li><a href="#e.msIdentifier">msIdentifier</a></li> 
+  <li><a href="#e.name">name</a></li> 
+  <li><a href="#e.note">note</a></li> 
+  <li><a href="#e.objectDesc">objectDesc</a></li> 
+  <li><a href="#e.orig">orig</a></li> 
+  <li><a href="#e.origin">origin</a></li> 
+  <li><a href="#e.p">p</a></li> 
+  <li><a href="#e.pb">pb</a></li> 
+  <li><a href="#e.persName">persName</a></li> 
+  <li><a href="#e.physDesc">physDesc</a></li> 
+  <li><a href="#e.placeName">placeName</a></li> 
+  <li><a href="#e.prefixDef">prefixDef</a></li>      
+               </ul>
+            </div>
+            <div class="red">
+               <ul>          
+  <li><a href="#e.profileDesc">profileDesc</a></li> 
+  <li><a href="#e.publicationStmt">publicationStmt</a></li> 
+  <li><a href="#e.reg">reg</a></li> 
+  <li><a href="#e.rendition">rendition</a></li> 
+  <li><a href="#e.repository">repository</a></li> 
+  <li><a href="#e.resp">resp</a></li> 
+  <li><a href="#e.respStmt">respStmt</a></li> 
+  <li><a href="#e.revisionDesc">revisionDesc</a></li> 
+  <li><a href="#e.seg">seg</a></li> 
+  <li><a href="#e.sic">sic</a></li> 
+  <li><a href="#e.sourceDesc">sourceDesc</a></li> 
+  <li><a href="#e.stamp">stamp</a></li> 
+  <li><a href="#e.supplied">supplied</a></li> 
+  <li><a href="#e.tagsDecl">tagsDecl</a></li> 
+  <li><a href="#e.teiCorpus">teiCorpus</a></li> 
+  <li><a href="#e.teiHeader">teiHeader</a></li> 
+  <li><a href="#e.text">text</a></li> 
+  <li><a href="#e.title">title</a></li> 
+  <li><a href="#e.titleStmt">titleStmt</a></li> 
+  <li><a href="#e.unclear">unclear</a></li> 
+  <li><a href="#e.w">w</a></li> 
+               </ul>
+            </div>
+            <div class="grey">
+               <ul>
+  <li><a class="attributeTOCLink" href="#a.agent">@agent</a></li> 
+  <li><a class="attributeTOCLink" href="#a.cert">@cert</a></li> 
+  <li><a class="attributeTOCLink" href="#a.form">@form</a></li> 
+  <li><a class="attributeTOCLink" href="#a.ident">@ident</a></li> 
+  <li><a class="attributeTOCLink" href="#a.matchPattern">@matchPattern</a></li> 
+  <li><a class="attributeTOCLink" href="#a.n">@n</a></li> 
+  <li><a class="attributeTOCLink" href="#a.reason">@reason</a></li> 
+  <li><a class="attributeTOCLink" href="#a.ref">@ref</a></li> 
+  <li><a class="attributeTOCLink" href="#a.rend">@rend</a></li> 
+  <li><a class="attributeTOCLink" href="#a.replacementPattern">@replacementPattern</a></li> 
+  <li><a class="attributeTOCLink" href="#a.scheme">@scheme</a></li> 
+  <li><a class="attributeTOCLink" href="#a.scribe">@scribe</a></li> 
+  <li><a class="attributeTOCLink" href="#a.type">@type</a></li> 
+  <li><a class="attributeTOCLink" href="#a.url">@url</a></li> 
+  <li><a class="attributeTOCLink" href="#a.when">@when</a></li> 
+  <li><a class="attributeTOCLink" href="#a.who">@who</a></li> 
+  <li><a class="attributeTOCLink" href="#a.xml:id">@xml:id</a></li> 
+               </ul>
+            </div>
+         </div>
+         <div class="clear"></div>
+         <div class="entry" id="e.TEI">
+            <div class="header"><span class="name">TEI</span><span class="gloss"><span class="divider"> | </span>TEI document</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a single
+     TEI-conformant document, containing a single TEI header, a single text, one or  
+     more members of the model.resourceLike class, or a combination of
+     these. A series of TEI elements may be combined together to
+     form a teiCorpus element. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-TEI.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">For the Northwind Papers project, the <span class="giTag">&lt;TEI&gt;</span>
+     element represents a discrete object—such as a letter, a journal, or something
+     else. A unique identifier should be added as an <span class="attTag">@xml:id</span> attribute, so
+     that the item's contents can be targeted directly within the project.</span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;TEI</span><span class="xmlAttName"> xml:id=</span><span class="xmlAttVal">"l_18350102FMS_WHS1v3"</span><span class="xmlTag">&gt;</span>  …  <span class="xmlTag">&lt;/TEI&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.xml:id" target="_self">@xml:id</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.teiCorpus" target="_self">teiCorpus</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.teiHeader" target="_self">teiHeader</a></li>
+     <li><a href="#e.text" target="_self">text</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.ab">
+            <div class="header"><span class="name">ab</span><span class="gloss"><span class="divider"> | </span>anonymous block</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains any arbitrary component-level unit of text, acting as an anonymous container
+     for phrase or inter level elements analogous to, but without the semantic baggage
+     of, a paragraph. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-ab.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Within the <span class="giTag">&lt;text&gt;</span> element, <span class="giTag">&lt;ab&gt;</span> is used to
+     enclose transcribed text, which are divided into lines with the <span class="giTag">&lt;lb&gt;</span> (line
+     break) element.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.body" target="_self">body</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.pb" target="_self">pb</a></li>
+     <li><a href="#e.lb" target="_self">lb</a></li>
+     <li><a href="#e.hi" target="_self">hi</a></li>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+     <li><a href="#e.supplied" target="_self">supplied</a></li>
+     <li><a href="#e.placeName" target="_self">placeName</a></li>
+     <li><a href="#e.gap" target="_self">gap</a></li>
+     <li><a href="#e.title" target="_self">title</a></li>
+     <li><a href="#e.w" target="_self">w</a></li>
+     <li><a href="#e.handShift" target="_self">handShift</a></li>
+     <li><a href="#e.stamp" target="_self">stamp</a></li>
+     <li><a href="#e.date" target="_self">date</a></li>
+     <li><a href="#e.unclear" target="_self">unclear</a></li>
+     <li><a href="#e.note" target="_self">note</a></li>
+     <li><a href="#e.name" target="_self">name</a></li>
+     <li><a href="#e.add" target="_self">add</a></li>
+     <li><a href="#e.choice" target="_self">choice</a></li>
+     <li><a href="#e.del" target="_self">del</a></li>
+     <li><a href="#e.seg" target="_self">seg</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.abbr">
+            <div class="header"><span class="name">abbr</span><span class="gloss"><span class="divider"> | </span>abbreviation</span><span class="count">7</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains an abbreviation of any sort. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-abbr.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used to identify abbreviations identified in the
+     transcription, and is always paired with a <span class="giTag">&lt;expan&gt;</span> tag.</span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;choice</span><span class="xmlTag">&gt;</span> 
+      <span class="xmlTag">&lt;abbr</span><span class="xmlTag">&gt;</span> W P—y <span class="xmlTag">&lt;/abbr&gt;</span> 
+      <span class="xmlTag">&lt;expan</span><span class="xmlTag">&gt;</span> Whig Party <span class="xmlTag">&lt;/expan&gt;</span> 
+   <span class="xmlTag">&lt;/choice&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.choice" target="_self">choice</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.hi" target="_self">hi</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.add">
+            <div class="header"><span class="name">add</span><span class="gloss"><span class="divider"> | </span>addition</span><span class="count">98</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains letters, words, or phrases inserted in the source
+     text by an author, scribe, or a previous annotator or corrector. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-add.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">The <span class="giTag">&lt;add&gt;</span> tag is used to mark up interlined text, and
+     corresponds to text surrounded with ^carets^ in the transcription file.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.placeName" target="_self">placeName</a></li>
+     <li><a href="#e.del" target="_self">del</a></li>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+     <li><a href="#e.hi" target="_self">hi</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.additions">
+            <div class="header"><span class="name">additions</span><span class="count">267</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a description of any significant additions found
+     within a manuscript, such as marginalia or other annotations. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-additions.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">The <span class="giTag">&lt;additions&gt;</span> area is used to document materials
+     attached or included with the text, such as drawings or other letters. Images and
+     links to transcriptions will be included here.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.physDesc" target="_self">physDesc</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.graphic" target="_self">graphic</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.body">
+            <div class="header"><span class="name">body</span><span class="gloss"><span class="divider"> | </span>text body</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains the whole body of a single unitary text, excluding any front or back matter. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-body.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">The principal (and in perhaps all cases, entire) contents of
+     the letter are stored within a single <span class="giTag">&lt;ab&gt;</span> element within
+     <span class="giTag">&lt;body&gt;</span>.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.text" target="_self">text</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.change">
+            <div class="header"><span class="name">change</span><span class="count">795</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">documents a change or set of changes made during the production
+     of a source document, or during the revision of an electronic file. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-change.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description"><span class="giTag">&lt;change&gt;</span> encodes milestones in the digital history of
+     each digital file in the Northwind project, such as transcription, conversion to TEI,
+     and publication. Smaller changes (such as edits to of a couple of lines) are
+     recorded using commit notes in subversion. This element always appears within
+     <span class="giTag">&lt;listChange&gt;</span>, which is within <span class="giTag">&lt;revisionDesc&gt;</span>.</span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;revisionDesc</span><span class="xmlTag">&gt;</span> 
+      <span class="xmlTag">&lt;listChange</span><span class="xmlTag">&gt;</span> 
+         <span class="xmlTag">&lt;change</span><span class="xmlAttName"> type=</span><span class="xmlAttVal">"transcription"</span><span class="xmlAttName"> when=</span><span class="xmlAttVal">"2014-05-01"</span><span class="xmlAttName"> who=</span><span class="xmlAttVal">"npp:saz"</span><span class="xmlTag">/&gt;</span> 
+         <span class="xmlTag">&lt;change</span><span class="xmlAttName"> type=</span><span class="xmlAttVal">"revision"</span><span class="xmlAttName"> when=</span><span class="xmlAttVal">"2014-09-01"</span><span class="xmlAttName"> who=</span><span class="xmlAttVal">"npp:mhr"</span><span class="xmlTag">/&gt;</span> 
+      <span class="xmlTag">&lt;/listChange&gt;</span> 
+   <span class="xmlTag">&lt;/revisionDesc&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.type" target="_self">@type</a></li>
+     <li><a href="#a.when" target="_self">@when</a></li>
+     <li><a href="#a.who" target="_self">@who</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.listChange" target="_self">listChange</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.choice">
+            <div class="header"><span class="name">choice</span><span class="count">49</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">groups a number of alternative encodings for the same point in
+     a text. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-choice.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Groups alternate encodings for matters such as expanded
+     abbreviations, minppellings, etc.<span class="usage_label"> Usage: </span><span class="usage">Do not use <span class="giTag">&lt;choice&gt;</span> in order to address situations relating
+        to physical damage to the text—use <span class="giTag">&lt;supplied&gt;</span> instead.</span><span class="see_also_label"> See also: </span><span class="see_also"><a href="#e.supplied">supplied</a></span></span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;choice</span><span class="xmlTag">&gt;</span> 
+      <span class="xmlTag">&lt;sic</span><span class="xmlTag">&gt;</span> doged <span class="xmlTag">&lt;/sic&gt;</span> 
+      <span class="xmlTag">&lt;corr</span><span class="xmlTag">&gt;</span> dodged <span class="xmlTag">&lt;/corr&gt;</span> 
+   <span class="xmlTag">&lt;/choice&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+     <li><a href="#e.date" target="_self">date</a></li>
+     <li><a href="#e.stamp" target="_self">stamp</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.orig" target="_self">orig</a></li>
+     <li><a href="#e.reg" target="_self">reg</a></li>
+     <li><a href="#e.sic" target="_self">sic</a></li>
+     <li><a href="#e.corr" target="_self">corr</a></li>
+     <li><a href="#e.abbr" target="_self">abbr</a></li>
+     <li><a href="#e.expan" target="_self">expan</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.corr">
+            <div class="header"><span class="name">corr</span><span class="gloss"><span class="divider"> | </span>correction</span><span class="count">40</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains the correct form of a passage apparently erroneous in the copy text. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-corr.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used to correct a minppelling identified in the
+     transcription, and is always paired with a <span class="giTag">&lt;sic&gt;</span> tag. • Used to correct a date provided in a letter.</span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;choice</span><span class="xmlTag">&gt;</span> 
+      <span class="xmlTag">&lt;sic</span><span class="xmlTag">&gt;</span> doged <span class="xmlTag">&lt;/sic&gt;</span> 
+      <span class="xmlTag">&lt;corr</span><span class="xmlTag">&gt;</span> dodged <span class="xmlTag">&lt;/corr&gt;</span> 
+   <span class="xmlTag">&lt;/choice&gt;</span> 
+   <span class="xmlTag">&lt;date</span><span class="xmlAttName"> when=</span><span class="xmlAttVal">"1837-11-29"</span><span class="xmlTag">&gt;</span>
+      <span class="xmlTag">&lt;choice</span><span class="xmlTag">&gt;</span> 
+         <span class="xmlTag">&lt;sic</span><span class="xmlTag">&gt;</span> Wednesday <span class="xmlTag">&lt;/sic&gt;</span> 
+         <span class="xmlTag">&lt;corr</span><span class="xmlTag">&gt;</span> Thursday <span class="xmlTag">&lt;/corr&gt;</span> 
+      <span class="xmlTag">&lt;/choice&gt;</span>  Nov 29 <span class="xmlTag">&lt;hi</span><span class="xmlAttName"> rend=</span><span class="xmlAttVal">"superscript"</span><span class="xmlTag">&gt;</span> th <span class="xmlTag">&lt;/hi&gt;</span> 
+   <span class="xmlTag">&lt;/date&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.choice" target="_self">choice</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.hi" target="_self">hi</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.correspAction">
+            <div class="header"><span class="name">correspAction</span><span class="count">676</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a structured description of the place,  
+     the name of a person/organization and the date related to the sending/receiving of
+     a message or any other action related to the correspondence <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-correspAction.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Metadata about the sender and the recipient are stored here.
+     Set the <span class="attTag">@type</span> to "sent" or "received" as appropriate.<span class="see_also_label"> See also: </span><span class="see_also"><a href="#e.origin">origin</a></span></span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.type" target="_self">@type</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.correspDesc" target="_self">correspDesc</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+     <li><a href="#e.placeName" target="_self">placeName</a></li>
+     <li><a href="#e.date" target="_self">date</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.correspDesc">
+            <div class="header"><span class="name">correspDesc</span><span class="gloss"><span class="divider"> | </span>correspondence
+  description</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a description
+     of the actions related to one act of correspondence <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-correspDesc.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Metadata about the sender, recipient, their addresses and the
+     letter’s date are stored here.<span class="see_also_label"> See also: </span><span class="see_also"><a href="#e.origin">origin</a></span></span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;correspDesc</span><span class="xmlTag">&gt;</span> 
+      <span class="xmlTag">&lt;correspAction</span><span class="xmlAttName"> type=</span><span class="xmlAttVal">"sent"</span><span class="xmlTag">&gt;</span> 
+         <span class="xmlTag">&lt;persName</span><span class="xmlAttName"> ref=</span><span class="xmlAttVal">"psn:NORf_827"</span><span class="xmlTag">/&gt;</span> 
+         <span class="xmlTag">&lt;placeName</span><span class="xmlAttName"> ref=</span><span class="xmlAttVal">"pla:FLO_1351"</span><span class="xmlTag">/&gt;</span> 
+         <span class="xmlTag">&lt;date</span><span class="xmlAttName"> type=</span><span class="xmlAttVal">"creation"</span><span class="xmlAttName"> when=</span><span class="xmlAttVal">"1830-01-01"</span><span class="xmlTag">/&gt;</span> 
+      <span class="xmlTag">&lt;/correspAction&gt;</span> 
+      <span class="xmlTag">&lt;correspAction</span><span class="xmlAttName"> type=</span><span class="xmlAttVal">"received"</span><span class="xmlTag">&gt;</span> 
+         <span class="xmlTag">&lt;persName</span><span class="xmlAttName"> ref=</span><span class="xmlAttVal">"psn:NORw_846"</span><span class="xmlTag">/&gt;</span> 
+         <span class="xmlTag">&lt;placeName</span><span class="xmlAttName"> ref=</span><span class="xmlAttVal">"pla:AUB_1319"</span><span class="xmlTag">/&gt;</span> 
+      <span class="xmlTag">&lt;/correspAction&gt;</span> 
+   <span class="xmlTag">&lt;/correspDesc&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.profileDesc" target="_self">profileDesc</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.correspAction" target="_self">correspAction</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.date">
+            <div class="header"><span class="name">date</span><span class="count">688</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a date in any format. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-date.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Within <span class="giTag">&lt;origin&gt;</span>, <span class="giTag">&lt;date&gt;</span>records the creation
+     date of the letter. • Within <span class="giTag">&lt;correspAction&gt;</span>, <span class="giTag">&lt;date&gt;</span>records the
+     creation date of the letter. • Within <span class="giTag">&lt;ab&gt;</span>, <span class="giTag">&lt;date&gt;</span> is being experimentally used to tag dates mentioned in the
+     letter text.<span class="usage_label"> Usage: </span><span class="usage"><span class="giTag">&lt;date&gt;</span> should always contain a <span class="attTag">@when</span> attribute
+        which encodes the referenced date according to the ISO-8601 <a href="https://en.wikipedia.org/wiki/ISO_8601" target="_blank">"Representation of dates and
+           times"</a> standard.</span></span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;date</span><span class="xmlAttName"> when=</span><span class="xmlAttVal">"1822-07-08"</span><span class="xmlTag">&gt;</span> Monday the 8 <span class="xmlTag">&lt;/date&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.when" target="_self">@when</a></li>
+     <li><a href="#a.type" target="_self">@type</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.origin" target="_self">origin</a></li>
+     <li><a href="#e.correspAction" target="_self">correspAction</a></li>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+     <li><a href="#e.stamp" target="_self">stamp</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.hi" target="_self">hi</a></li>
+     <li><a href="#e.choice" target="_self">choice</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.del">
+            <div class="header"><span class="name">del</span><span class="gloss"><span class="divider"> | </span>deletion</span><span class="count">246</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a letter, word, or passage deleted, marked as deleted, or otherwise indicated
+     as
+     superfluous or spurious in the copy text by an author, scribe, or a previous annotator
+     or corrector. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-del.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">The <span class="giTag">&lt;del&gt;</span> tag is used to mark up cancelled text, and
+     corresponds to text formatted as strikethrough in the transcription file.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+     <li><a href="#e.add" target="_self">add</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.unclear" target="_self">unclear</a></li>
+     <li><a href="#e.hi" target="_self">hi</a></li>
+     <li><a href="#e.gap" target="_self">gap</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.distributor">
+            <div class="header"><span class="name">distributor</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">supplies the name of a person or other agency responsible for the
+     distribution of a text. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-distributor.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Included within the project header template to identify the
+     name of our project.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.publicationStmt" target="_self">publicationStmt</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.encodingDesc">
+            <div class="header"><span class="name">encodingDesc</span><span class="gloss"><span class="divider"> | </span>encoding description</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">documents the relationship between an electronic text and the
+     source or sources from which it was derived. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-encodingDesc.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Included within the project header template to store
+     references to the project's -ography files, and to provide machine processing
+     instructions for <a href="http://teiboilerplate.org" target="_blank">TEI
+        Boilerplate</a>.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.teiHeader" target="_self">teiHeader</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.listPrefixDef" target="_self">listPrefixDef</a></li>
+     <li><a href="#e.tagsDecl" target="_self">tagsDecl</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.expan">
+            <div class="header"><span class="name">expan</span><span class="gloss"><span class="divider"> | </span>expansion</span><span class="count">5</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains the expansion of an abbreviation. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-expan.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used to expand abbreviations identified in the transcription,
+     and is always paired with a <span class="giTag">&lt;abbr&gt;</span> tag.</span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;choice</span><span class="xmlTag">&gt;</span> 
+      <span class="xmlTag">&lt;abbr</span><span class="xmlTag">&gt;</span> W P—y <span class="xmlTag">&lt;/abbr&gt;</span> 
+      <span class="xmlTag">&lt;expan</span><span class="xmlTag">&gt;</span> Whig Party <span class="xmlTag">&lt;/expan&gt;</span> 
+   <span class="xmlTag">&lt;/choice&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.choice" target="_self">choice</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.fileDesc">
+            <div class="header"><span class="name">fileDesc</span><span class="gloss"><span class="divider"> | </span>file description</span><span class="count">339</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a full bibliographic description of an electronic file. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fileDesc.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">The location within the project header template where key
+     metadata tags—in particular the TEI file's <span class="giTag">&lt;title&gt;</span> and
+     <span class="giTag">&lt;respStmt&gt;</span>—are stored.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.teiHeader" target="_self">teiHeader</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.titleStmt" target="_self">titleStmt</a></li>
+     <li><a href="#e.publicationStmt" target="_self">publicationStmt</a></li>
+     <li><a href="#e.sourceDesc" target="_self">sourceDesc</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.gap">
+            <div class="header"><span class="name">gap</span><span class="count">58</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">indicates a point where material has been omitted in a transcription, whether for
+     editorial
+     reasons described in the TEI header, as part of sampling practice, or because the
+     material is
+     illegible, invisible, or inaudible. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-gap.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Indicates places where a portion of transcribed text could
+     not be provided, perhaps for reasons relating to physical damage or
+     illegibility.<span class="see_also_label"> See also: </span><span class="see_also"><a href="#e.supplied">supplied</a>, <a href="#e.unclear">unclear</a></span></span><div class="examples"><span class="label">Example(s): </span>
+		 <pre class="teiCode"> the new frames  <span class="xmlTag">&lt;gap</span><span class="xmlAttName"> agent=</span><span class="xmlAttVal">"seal"</span><span class="xmlTag">/&gt;</span> <span class="xmlTag">&lt;lb</span><span class="xmlTag">/&gt;</span>  and by whom?  </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.agent" target="_self">@agent</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+     <li><a href="#e.del" target="_self">del</a></li>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.gi">
+            <div class="header"><span class="name">gi</span><span class="gloss"><span class="divider"> | </span>element name</span><span class="count">1346</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains the name (generic identifier) of an element. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-gi.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used in project documentation within the header template to
+     encode the names of TEI elements.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.p" target="_self">p</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.graphic">
+            <div class="header"><span class="name">graphic</span><span class="count">267</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">indicates the location of an inline graphic, illustration, or figure. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-graphic.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Within <span class="giTag">&lt;additions&gt;</span>, used to encode image file names of
+     materials included with the letters. • In the near future, will be used within the
+     <span class="giTag">&lt;facsimile&gt;</span> tag to encode image files of the letters.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.n" target="_self">@n</a></li>
+     <li><a href="#a.url" target="_self">@url</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.additions" target="_self">additions</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.handShift">
+            <div class="header"><span class="name">handShift</span><span class="count">181</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">marks the beginning of a sequence of text written in a new
+     hand, or the beginning of a scribal stint. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-handShift.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description"><span class="giTag">&lt;handShift&gt;</span> is used to indicate the point where
+     another person's handwriting has taken over from the initial author of the letter.
+     </span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;handShift</span><span class="xmlAttName"> scribe=</span><span class="xmlAttVal">"psn:NORf_826"</span><span class="xmlTag">/&gt;</span> Dearest Father, I've asked mother to allow me to
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.scribe" target="_self">@scribe</a></li>
+     <li><a href="#a.cert" target="_self">@cert</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.hi">
+            <div class="header"><span class="name">hi</span><span class="gloss"><span class="divider"> | </span>highlighted</span><span class="count">1362</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">marks a word or phrase as graphically distinct from the
+     surrounding text, for reasons concerning which no claim is
+     made. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-hi.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used to indicate superscript (e.g., ordinals), underlines, or
+     any other visually-distinct formatting for text. <span class="giTag">&lt;hi&gt;</span> is also used within
+     our workflow as an intermediary stage for inserted and cancelled text, which
+     should be encoded using <span class="giTag">&lt;add&gt;</span> and <span class="giTag">&lt;del&gt;</span>, respectively.<span class="usage_label"> Usage: </span><span class="usage"><span class="giTag">&lt;hi&gt;</span> should always include a <span class="attTag">@rend</span> attribute
+        which describes how the text is visually distinct. Acceptable values include
+        "superscript", "underline", "underdoubleline", and "subscript".</span></span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.rend" target="_self">@rend</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+     <li><a href="#e.date" target="_self">date</a></li>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+     <li><a href="#e.del" target="_self">del</a></li>
+     <li><a href="#e.placeName" target="_self">placeName</a></li>
+     <li><a href="#e.title" target="_self">title</a></li>
+     <li><a href="#e.sic" target="_self">sic</a></li>
+     <li><a href="#e.corr" target="_self">corr</a></li>
+     <li><a href="#e.abbr" target="_self">abbr</a></li>
+     <li><a href="#e.add" target="_self">add</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+     <li><a href="#e.placeName" target="_self">placeName</a></li>
+     <li><a href="#e.supplied" target="_self">supplied</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.history">
+            <div class="header"><span class="name">history</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description"> groups elements
+     describing the full history of a manuscript or manuscript part. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-history.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used to describe the origin of a letter, in particular its
+     creation date. It is likely that <span class="giTag">&lt;history&gt;</span> will be deprecated, as its
+     purpose duplicates <span class="giTag">&lt;correspDesc&gt;</span><span class="see_also_label"> See also: </span><span class="see_also"><a href="#e.correspDesc">correspDesc</a></span></span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;history</span><span class="xmlTag">&gt;</span> 
+      <span class="xmlTag">&lt;origin</span><span class="xmlTag">&gt;</span> 
+         <span class="xmlTag">&lt;date</span><span class="xmlAttName"> when=</span><span class="xmlAttVal">"1829-07-21"</span><span class="xmlTag">/&gt;</span> 
+      <span class="xmlTag">&lt;/origin&gt;</span> 
+   <span class="xmlTag">&lt;/history&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.msDesc" target="_self">msDesc</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.origin" target="_self">origin</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.institution">
+            <div class="header"><span class="name">institution</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains the name of an organization such as a university or
+     library, with which a manuscript is identified, generally its
+     holding institution. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-institution.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Included within the project header template to identify
+     project's host university.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.msIdentifier" target="_self">msIdentifier</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.langUsage">
+            <div class="header"><span class="name">langUsage</span><span class="gloss"><span class="divider"> | </span>language usage</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">describes the languages, sublanguages, registers, dialects, etc.
+     represented within a text. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-langUsage.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">In conjunction with <span class="giTag">&lt;language&gt;</span>, used within the header
+     template to encode the principal language of a letter, which is almost always
+     English.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.profileDesc" target="_self">profileDesc</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.language" target="_self">language</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.language">
+            <div class="header"><span class="name">language</span><span class="count">341</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">characterizes a single language or sublanguage used within a text. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-language.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">In conjunction with <span class="giTag">&lt;langUsage&gt;</span>, used within the
+     header template to encode the principal language of a letter, which is almost
+     always English.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.ident" target="_self">@ident</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.langUsage" target="_self">langUsage</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.lb">
+            <div class="header"><span class="name">lb</span><span class="gloss"><span class="divider"> | </span>line break</span><span class="count">28540</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">marks the start of a new (typographic) line in some edition or version of a text. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-lb.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">used to divide the text of each letter into lines which
+     correspond with the transcriptions.</span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode"> In the evening Frances <span class="xmlTag">&lt;lb</span><span class="xmlTag">/&gt;</span>  and I
+  went up to the bank.  </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+     <li><a href="#e.w" target="_self">w</a></li>
+     <li><a href="#e.stamp" target="_self">stamp</a></li>
+     <li><a href="#e.placeName" target="_self">placeName</a></li>
+     <li><a href="#e.title" target="_self">title</a></li>
+     <li><a href="#e.name" target="_self">name</a></li>
+     <li><a href="#e.seg" target="_self">seg</a></li>
+     <li><a href="#e.supplied" target="_self">supplied</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.listChange">
+            <div class="header"><span class="name">listChange</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">groups a number of change descriptions associated 
+     with either the creation of a source text or the revision of an encoded text. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listChange.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Alongside <span class="giTag">&lt;revisionDesc&gt;</span> and <span class="giTag">&lt;change&gt;</span>,
+     describes the major milestones in the life of the digital file, such as
+     transcription, encoding, and publication.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.revisionDesc" target="_self">revisionDesc</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.change" target="_self">change</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.listPrefixDef">
+            <div class="header"><span class="name">listPrefixDef</span><span class="gloss"><span class="divider"> | </span>list of prefix definitions</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a list of definitions of prefixing schemes used in data.pointer values, showing
+     how abbreviated URIs using each scheme may be expanded into full URIs. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listPrefixDef.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Within the project header template, encloses the
+     <span class="giTag">&lt;prefixDef&gt;</span> tags which contain links to the project -ography
+     files.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.encodingDesc" target="_self">encodingDesc</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.prefixDef" target="_self">prefixDef</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.msDesc">
+            <div class="header"><span class="name">msDesc</span><span class="gloss"><span class="divider"> | </span>manuscript description</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a description of a single identifiable
+     manuscript or other text-bearing object. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msDesc.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Within the project header template, encloses tags which for
+     things such as collection/call number, physical characteristics, etc.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.sourceDesc" target="_self">sourceDesc</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.msIdentifier" target="_self">msIdentifier</a></li>
+     <li><a href="#e.physDesc" target="_self">physDesc</a></li>
+     <li><a href="#e.history" target="_self">history</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.msIdentifier">
+            <div class="header"><span class="name">msIdentifier</span><span class="gloss"><span class="divider"> | </span>manuscript identifier</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains the information required to identify
+     the  manuscript being described. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msIdentifier.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Within the project header template, identifies the
+     institution that owns the manuscript transcribed in this file.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.msDesc" target="_self">msDesc</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.institution" target="_self">institution</a></li>
+     <li><a href="#e.repository" target="_self">repository</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.name">
+            <div class="header"><span class="name">name</span><span class="gloss"><span class="divider"> | </span>name, proper noun</span><span class="count">137</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a proper noun or noun phrase. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-name.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description"><span class="giTag">&lt;name&gt;</span> is used to identify groups of persons mentioned
+     in the text, and for cases where the name that must be tagged doesn't refer to a
+     person. When a single person is mentioned, <span class="giTag">&lt;persName&gt;</span> is used instead. When
+     tagging a group of persons, add a <span class="attTag">@type</span> with a value of "group."<span class="see_also_label"> See also: </span><span class="see_also"><a href="#e.persName">persName</a>, <a href="#e.placeName">placeName</a></span></span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode"> The  <span class="xmlTag">&lt;name</span><span class="xmlAttName"> type=</span><span class="xmlAttVal">"group"</span><span class="xmlAttName"> ref=</span><span class="xmlAttVal">"psn:HOFj_4200 psn:HOFp_4201"</span><span class="xmlTag">&gt;</span> Hoffmans <span class="xmlTag">&lt;/name&gt;</span>  dined with both  <span class="xmlTag">&lt;name</span><span class="xmlAttName"> type=</span><span class="xmlAttVal">"group"</span><span class="xmlAttName"> ref=</span><span class="xmlAttVal">"psn:unknown psn:unknown"</span><span class="xmlTag">&gt;</span> Hockenglockenses <span class="xmlTag">&lt;/name&gt;</span> .  </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.type" target="_self">@type</a></li>
+     <li><a href="#a.ref" target="_self">@ref</a></li>
+     <li><a href="#a.cert" target="_self">@cert</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.supplied" target="_self">supplied</a></li>
+     <li><a href="#e.lb" target="_self">lb</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.note">
+            <div class="header"><span class="name">note</span><span class="count">2680</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a note or annotation. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-note.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">At this stage in the project, notes are generally meant to be
+     read only by project staff. For these kinds of notes, an XML comment
+     &lt;!--comment--&gt; is preferable in cases where follow-up by a project
+     editor is needed. Any questions on <span class="giTag">&lt;note&gt;</span> should be referred to the TEI
+     Encoding Manager for the Northwind Project.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.objectDesc">
+            <div class="header"><span class="name">objectDesc</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a description of the physical
+     components making up the object which is being described. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-objectDesc.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description"><span class="giTag">&lt;objectDesc&gt;</span> records the genre of material represented
+     in the TEI file. In nearly all cases this is "letter", and is included as such in
+     the header template.</span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;objectDesc</span><span class="xmlAttName"> form=</span><span class="xmlAttVal">"letter"</span><span class="xmlTag">/&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.form" target="_self">@form</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.physDesc" target="_self">physDesc</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.orig">
+            <div class="header"><span class="name">orig</span><span class="gloss"><span class="divider"> | </span>original form</span><span class="count">1</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a reading which is marked as following the original, rather than being normalized
+     or corrected. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-orig.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used in instances where some type of regularization is
+     needed, for example where archaic spelling or usage would be unfamiliar to modern
+     readers. This tag—which identifies the original text in the transcription—is
+     always paired with the <span class="giTag">&lt;reg&gt;</span> tag.<span class="usage_label"> Usage: </span><span class="usage"><span class="giTag">&lt;orig&gt;</span> and <span class="giTag">&lt;reg&gt;</span> are not to be used to tag
+        abbreviations or minppellings.</span><span class="see_also_label"> See also: </span><span class="see_also"><a href="#e.sic">sic</a>, <a href="#e.abbr">abbr</a></span></span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode"> pulled the hairs out of Hobbys  <span class="xmlTag">&lt;choice</span><span class="xmlTag">&gt;</span> 
+      <span class="xmlTag">&lt;orig</span><span class="xmlTag">&gt;</span> main <span class="xmlTag">&lt;/orig&gt;</span> 
+      <span class="xmlTag">&lt;reg</span><span class="xmlTag">&gt;</span> mane <span class="xmlTag">&lt;/reg&gt;</span> 
+   <span class="xmlTag">&lt;/choice&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.choice" target="_self">choice</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.origin">
+            <div class="header"><span class="name">origin</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains any descriptive or other information
+     concerning the origin of  a manuscript or manuscript part. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-origin.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Origin records information about the history of a manuscript.
+     At this time, the date that a letter is written is recorded here, within a
+     <span class="giTag">&lt;date&gt;</span> element. This date should also be recorded within
+     <span class="giTag">&lt;correspDesc&gt;</span>. For correspondence, it is likely that this kind of header
+     metadata will appear only in <span class="giTag">&lt;correspDesc&gt;</span>, however <span class="giTag">&lt;origin&gt;</span> will be
+     retained within the project for diaries and other kinds of texts.<span class="see_also_label"> See also: </span><span class="see_also"><a href="#e.correspDesc">correspDesc</a>, <a href="#e.date">date</a></span></span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;origin</span><span class="xmlTag">&gt;</span> 
+      <span class="xmlTag">&lt;date</span><span class="xmlAttName"> when=</span><span class="xmlAttVal">"1861-01-01"</span><span class="xmlTag">/&gt;</span> 
+   <span class="xmlTag">&lt;/origin&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.history" target="_self">history</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.date" target="_self">date</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.p">
+            <div class="header"><span class="name">p</span><span class="gloss"><span class="divider"> | </span>paragraph</span><span class="count">1348</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">marks paragraphs in prose. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-p.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">P encloses paragraphs of documentation within the teiHeader
+     element.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.publicationStmt" target="_self">publicationStmt</a></li>
+     <li><a href="#e.sourceDesc" target="_self">sourceDesc</a></li>
+     <li><a href="#e.prefixDef" target="_self">prefixDef</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.gi" target="_self">gi</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.pb">
+            <div class="header"><span class="name">pb</span><span class="gloss"><span class="divider"> | </span>page break</span><span class="count">1157</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">marks the start of a new page in a paginated document. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pb.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">used to divide the text of each letter into pages which
+     correspond with the transcriptions.</span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;pb</span><span class="xmlAttName"> n=</span><span class="xmlAttVal">"3"</span><span class="xmlTag">/&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.n" target="_self">@n</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.persName">
+            <div class="header"><span class="name">persName</span><span class="gloss"><span class="divider"> | </span>personal name</span><span class="count">4921</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a proper noun or proper-noun phrase referring to a
+     person, possibly including one or more of
+     the person's forenames, surnames, honorifics, added names, etc. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-persName.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">within the <span class="giTag">&lt;text&gt;</span> element, represents a personal name,
+     or a reference (which may or may not contain a proper noun) to a person recorded
+     in the transcribed materials. In cases where a person's identity is less than
+     certain, attach a <span class="attTag">@cert</span> attribute with a value of "medium" for
+     probable/likely cases, and "low" for possibly/maybe. • within the <span class="giTag">&lt;correspDesc&gt;</span> element, represents the name
+     of the sender or recipient of a letter • within the <span class="giTag">&lt;respStmt&gt;</span> element, represents the name of
+     a project staff member who has worked on the TEI file.<span class="see_also_label"> See also: </span><span class="see_also"><a href="#e.placeName">placeName</a>, <a href="#e.name">name</a></span></span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode"> I have just returned from a walk to
+      <span class="xmlTag">&lt;persName</span><span class="xmlAttName"> ref=</span><span class="xmlAttVal">"psn:CUMc_4029"</span><span class="xmlTag">&gt;</span> Mr Cummings <span class="xmlTag">&lt;/persName&gt;</span>  the good man himself came
+  home with me.  </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.ref" target="_self">@ref</a></li>
+     <li><a href="#a.cert" target="_self">@cert</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.respStmt" target="_self">respStmt</a></li>
+     <li><a href="#e.correspAction" target="_self">correspAction</a></li>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+     <li><a href="#e.hi" target="_self">hi</a></li>
+     <li><a href="#e.title" target="_self">title</a></li>
+     <li><a href="#e.supplied" target="_self">supplied</a></li>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+     <li><a href="#e.add" target="_self">add</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.lb" target="_self">lb</a></li>
+     <li><a href="#e.hi" target="_self">hi</a></li>
+     <li><a href="#e.supplied" target="_self">supplied</a></li>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+     <li><a href="#e.pb" target="_self">pb</a></li>
+     <li><a href="#e.w" target="_self">w</a></li>
+     <li><a href="#e.gap" target="_self">gap</a></li>
+     <li><a href="#e.add" target="_self">add</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.physDesc">
+            <div class="header"><span class="name">physDesc</span><span class="gloss"><span class="divider"> | </span>physical description</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a full physical description of a
+     manuscript or manuscript part, optionally subdivided using more
+     specialized elements from the model.physDescPart class. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-physDesc.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Included within the project header template, and contains
+     tags which describe the physical aspects of the letters, such as
+     <span class="giTag">&lt;additions&gt;</span> and <span class="giTag">&lt;objectDesc&gt;</span>. </span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.msDesc" target="_self">msDesc</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.objectDesc" target="_self">objectDesc</a></li>
+     <li><a href="#e.additions" target="_self">additions</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.placeName">
+            <div class="header"><span class="name">placeName</span><span class="count">1257</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains an absolute or relative place name. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-placeName.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">within the <span class="giTag">&lt;text&gt;</span> element, represents a the name of a
+     place recorded in the transcribed materials. • within the <span class="giTag">&lt;correspDesc&gt;</span> element, represents the
+     location of the sender or recipient of a letter<span class="see_also_label"> See also: </span><span class="see_also"><a href="#e.persName">persName</a>, <a href="#e.name">name</a></span></span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.ref" target="_self">@ref</a></li>
+     <li><a href="#a.cert" target="_self">@cert</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.correspAction" target="_self">correspAction</a></li>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+     <li><a href="#e.hi" target="_self">hi</a></li>
+     <li><a href="#e.add" target="_self">add</a></li>
+     <li><a href="#e.stamp" target="_self">stamp</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.lb" target="_self">lb</a></li>
+     <li><a href="#e.hi" target="_self">hi</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.prefixDef">
+            <div class="header"><span class="name">prefixDef</span><span class="gloss"><span class="divider"> | </span>prefixing scheme used in data.pointer values</span><span class="count">1346</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">defines a prefixing scheme used in data.pointer values,
+     showing how abbreviated URIs using the scheme may be expanded into full URIs. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-prefixDef.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Within the project header template, defines a prefix that can
+     be used in <span class="attTag">@ref</span> attributes to link to the project's -ography
+     files.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.ident" target="_self">@ident</a></li>
+     <li><a href="#a.matchPattern" target="_self">@matchPattern</a></li>
+     <li><a href="#a.replacementPattern" target="_self">@replacementPattern</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.listPrefixDef" target="_self">listPrefixDef</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.p" target="_self">p</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.profileDesc">
+            <div class="header"><span class="name">profileDesc</span><span class="gloss"><span class="divider"> | </span>text-profile description</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">provides a detailed description of non-bibliographic aspects of a text, specifically
+     the
+     languages and sublanguages used, the situation in which it was produced, the participants
+     and
+     their setting. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-profileDesc.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Within the project header template, <span class="giTag">&lt;profileDesc&gt;</span>
+     encloses tags which provide additional context about the creation of the text,
+     such as persons and places involved.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.teiHeader" target="_self">teiHeader</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.langUsage" target="_self">langUsage</a></li>
+     <li><a href="#e.correspDesc" target="_self">correspDesc</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.publicationStmt">
+            <div class="header"><span class="name">publicationStmt</span><span class="gloss"><span class="divider"> | </span>publication statement</span><span class="count">339</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">groups information concerning the publication or distribution of an electronic or
+     other text. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-publicationStmt.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Within the project header template, encloses tags which
+     document the nature of the text's release, such as publisher or
+     distributor.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.fileDesc" target="_self">fileDesc</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.p" target="_self">p</a></li>
+     <li><a href="#e.distributor" target="_self">distributor</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.reg">
+            <div class="header"><span class="name">reg</span><span class="gloss"><span class="divider"> | </span>regularization</span><span class="count">4</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a reading which has been regularized or normalized in some sense. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-reg.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used in instances where some type of regularization is
+     needed, for example where archaic spelling or usage would be unfamiliar to modern
+     readers. This tag is always paired with the <span class="giTag">&lt;orig&gt;</span> tag.<span class="usage_label"> Usage: </span><span class="usage"><span class="giTag">&lt;orig&gt;</span> and <span class="giTag">&lt;reg&gt;</span> are not to be used to tag
+        abbreviations or minppellings.</span><span class="see_also_label"> See also: </span><span class="see_also"><a href="#e.sic">sic</a>, <a href="#e.abbr">abbr</a></span></span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode"> pulled the hairs out of Hobbys  <span class="xmlTag">&lt;choice</span><span class="xmlTag">&gt;</span> 
+      <span class="xmlTag">&lt;orig</span><span class="xmlTag">&gt;</span> main <span class="xmlTag">&lt;/orig&gt;</span> 
+      <span class="xmlTag">&lt;reg</span><span class="xmlTag">&gt;</span> mane <span class="xmlTag">&lt;/reg&gt;</span> 
+   <span class="xmlTag">&lt;/choice&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.choice" target="_self">choice</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.rendition">
+            <div class="header"><span class="name">rendition</span><span class="count">1352</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">supplies information about the rendition or appearance of one or more elements in
+     the source
+     text. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-rendition.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Part of the project header template, describes formatting
+     settings used by <a href="http://teiboilerplate.org" target="_blank">TEI
+        Boilerplate</a>.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.xml:id" target="_self">@xml:id</a></li>
+     <li><a href="#a.n" target="_self">@n</a></li>
+     <li><a href="#a.scheme" target="_self">@scheme</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.tagsDecl" target="_self">tagsDecl</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.repository">
+            <div class="header"><span class="name">repository</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains the name of a repository within which manuscripts are stored, possibly forming
+     part of an institution. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-repository.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Within the project header template, identifies the holding
+     unit at the institution which owns the material.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.msIdentifier" target="_self">msIdentifier</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.resp">
+            <div class="header"><span class="name">resp</span><span class="gloss"><span class="divider"> | </span>responsibility</span><span class="count">676</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a phrase describing the nature of a person's intellectual responsibility,
+     or an organization's role 
+     in the production or distribution of a work. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-resp.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Indicates the role a project staff member had in creating the
+     associated TEI document.<span class="see_also_label"> See also: </span><span class="see_also"><a href="#e.respStmt">respStmt</a></span></span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;resp</span><span class="xmlTag">&gt;</span> transcriber <span class="xmlTag">&lt;/resp&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.ref" target="_self">@ref</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.respStmt" target="_self">respStmt</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.respStmt">
+            <div class="header"><span class="name">respStmt</span><span class="gloss"><span class="divider"> | </span>statement of responsibility</span><span class="count">676</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">supplies a statement of responsibility for the intellectual content of a text, edition,
+     recording, or series, where the specialized elements for authors, editors, etc. do
+     not suffice
+     or do not apply. May also be used to encode information about individuals or organizations
+     
+     which have played a role in the production or distribution of a bibliographic work. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-respStmt.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">For the Northwind Papers project, the <span class="giTag">&lt;respStmt&gt;</span>
+     element records which staff members worked on a particular TEI file, along with
+     their respective roles.</span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;respStmt</span><span class="xmlTag">&gt;</span> 
+      <span class="xmlTag">&lt;resp</span><span class="xmlTag">&gt;</span> student editor <span class="xmlTag">&lt;/resp&gt;</span> 
+      <span class="xmlTag">&lt;persName</span><span class="xmlAttName"> ref=</span><span class="xmlAttVal">"npp:saz"</span><span class="xmlTag">/&gt;</span> 
+   <span class="xmlTag">&lt;/respStmt&gt;</span> 
+   <span class="xmlTag">&lt;respStmt</span><span class="xmlTag">&gt;</span> 
+      <span class="xmlTag">&lt;resp</span><span class="xmlTag">&gt;</span> transcriber <span class="xmlTag">&lt;/resp&gt;</span> 
+      <span class="xmlTag">&lt;persName</span><span class="xmlAttName"> ref=</span><span class="xmlAttVal">"npp:jds"</span><span class="xmlTag">/&gt;</span> 
+   <span class="xmlTag">&lt;/respStmt&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.titleStmt" target="_self">titleStmt</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.resp" target="_self">resp</a></li>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.revisionDesc">
+            <div class="header"><span class="name">revisionDesc</span><span class="gloss"><span class="divider"> | </span>revision description</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">summarizes the revision history for a file. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-revisionDesc.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Alongside <span class="giTag">&lt;listChange&gt;</span> and <span class="giTag">&lt;change&gt;</span>, describes
+     the major milestones in the life of the digital file, such as transcription,
+     encoding, and publication.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.teiHeader" target="_self">teiHeader</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.listChange" target="_self">listChange</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.seg">
+            <div class="header"><span class="name">seg</span><span class="gloss"><span class="divider"> | </span>arbitrary segment</span><span class="count">2</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">represents any segmentation of text below the chunk level. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-seg.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Experimental: <span class="giTag">&lt;seg&gt;</span> is being used to document
+     marginalia included within the transcription.<span class="usage_label"> Usage: </span><span class="usage">Add a <span class="attTag">@type</span> attribute with the value "margin", and then
+        add an <span class="attTag">@n</span> attribute which identifies the page and its sequence on that
+        page, e.g., "2a" means the first marginalia on page two. It is preferred—but not
+        required— that these marginalia <span class="giTag">&lt;seg&gt;</span> tags be located in a fashion to
+        inline notes, that is at the point where they could be most informative to the
+        reader.</span></span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;seg</span><span class="xmlAttName"> type=</span><span class="xmlAttVal">"margin"</span><span class="xmlAttName"> n=</span><span class="xmlAttVal">"2a"</span><span class="xmlTag">&gt;</span> Pa thinks its useless to keep a fire in the hall I have
+     no  <span class="xmlTag">&lt;lb</span><span class="xmlTag">/&gt;</span>  place to see company except in the south room which <span class="xmlTag">&lt;/seg&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.type" target="_self">@type</a></li>
+     <li><a href="#a.n" target="_self">@n</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.lb" target="_self">lb</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.sic">
+            <div class="header"><span class="name">sic</span><span class="gloss"><span class="divider"> | </span>Latin for thus or so
+  </span><span class="count">41</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains text reproduced although apparently incorrect or inaccurate. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sic.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used to identify a minppelling identified in the
+     transcription, and is always paired with a <span class="giTag">&lt;corr&gt;</span> tag. • Used to identify calendar-related errors provided in a
+     letter.</span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;choice</span><span class="xmlTag">&gt;</span> 
+      <span class="xmlTag">&lt;sic</span><span class="xmlTag">&gt;</span> doged <span class="xmlTag">&lt;/sic&gt;</span> 
+      <span class="xmlTag">&lt;corr</span><span class="xmlTag">&gt;</span> dodged <span class="xmlTag">&lt;/corr&gt;</span> 
+   <span class="xmlTag">&lt;/choice&gt;</span> 
+   <span class="xmlTag">&lt;date</span><span class="xmlAttName"> when=</span><span class="xmlAttVal">"1837-11-29"</span><span class="xmlTag">&gt;</span>
+      <span class="xmlTag">&lt;choice</span><span class="xmlTag">&gt;</span> 
+         <span class="xmlTag">&lt;sic</span><span class="xmlTag">&gt;</span> Wednesday <span class="xmlTag">&lt;/sic&gt;</span> 
+         <span class="xmlTag">&lt;corr</span><span class="xmlTag">&gt;</span> Thursday <span class="xmlTag">&lt;/corr&gt;</span> 
+      <span class="xmlTag">&lt;/choice&gt;</span>  Nov 29 <span class="xmlTag">&lt;hi</span><span class="xmlAttName"> rend=</span><span class="xmlAttVal">"superscript"</span><span class="xmlTag">&gt;</span> th <span class="xmlTag">&lt;/hi&gt;</span>
+   <span class="xmlTag">&lt;/date&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.choice" target="_self">choice</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.hi" target="_self">hi</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.sourceDesc">
+            <div class="header"><span class="name">sourceDesc</span><span class="gloss"><span class="divider"> | </span>source description</span><span class="count">339</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">describes the source from which an electronic text was derived or generated, typically
+     a
+     bibliographic description in the case of a digitized text, or a phrase such as "born
+     digital"
+     for a text which has no previous existence. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sourceDesc.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Within the project header template, encloses tags which
+     describe aspects germane to the source material, such as its housing library and
+     call number, physical dimensions, etc.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.fileDesc" target="_self">fileDesc</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.p" target="_self">p</a></li>
+     <li><a href="#e.msDesc" target="_self">msDesc</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.stamp">
+            <div class="header"><span class="name">stamp</span><span class="count">99</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a word or phrase describing a
+     stamp or similar device. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-stamp.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">This element is used to note the postmark of the letter, if
+     one exists. These are often found on the last page of a letter.</span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;stamp</span><span class="xmlAttName"> type=</span><span class="xmlAttVal">"postmark"</span><span class="xmlTag">&gt;</span> 12 April 1838 <span class="xmlTag">&lt;/stamp&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.type" target="_self">@type</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.lb" target="_self">lb</a></li>
+     <li><a href="#e.date" target="_self">date</a></li>
+     <li><a href="#e.placeName" target="_self">placeName</a></li>
+     <li><a href="#e.choice" target="_self">choice</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.supplied">
+            <div class="header"><span class="name">supplied</span><span class="count">340</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">signifies text supplied by the transcriber or editor for any
+     reason; for example because the original cannot be read due to
+     physical damage, or because of an obvious omission by the author or scribe. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-supplied.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description"><span class="giTag">&lt;supplied&gt;</span> is used in cases where text that is missing
+     from the from the manuscripts (e.g., from holes / tears in the paper, wax stains)
+     can be inferred by the transcriber.<span class="see_also_label"> See also: </span><span class="see_also"><a href="#e.gap">gap</a>, <a href="#e.damage">damage</a>, <a href="#e.unclear">unclear</a></span></span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode"> Today, I saw a  <span class="xmlTag">&lt;supplied</span><span class="xmlAttName"> reason=</span><span class="xmlAttVal">"hole"</span><span class="xmlTag">&gt;</span> moose <span class="xmlTag">&lt;/supplied&gt;</span>  walking through the woods. The moose was large  </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.reason" target="_self">@reason</a></li>
+     <li><a href="#a.cert" target="_self">@cert</a></li>
+     <li><a href="#a.n" target="_self">@n</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+     <li><a href="#e.hi" target="_self">hi</a></li>
+     <li><a href="#e.w" target="_self">w</a></li>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+     <li><a href="#e.name" target="_self">name</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+     <li><a href="#e.lb" target="_self">lb</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.tagsDecl">
+            <div class="header"><span class="name">tagsDecl</span><span class="gloss"><span class="divider"> | </span>tagging declaration</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">provides detailed information about the tagging applied to a document. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-tagsDecl.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Part of the project header template, provides configuration
+     settings used by <a href="http://teiboilerplate.org" target="_blank">TEI
+        Boilerplate</a>.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.encodingDesc" target="_self">encodingDesc</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.rendition" target="_self">rendition</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.teiCorpus">
+            <div class="header"><span class="name">teiCorpus</span><span class="count">1</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains the whole of a TEI encoded corpus, comprising a single corpus header and
+     one or
+     more TEI elements, each containing a single text header and a text. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teiCorpus.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Not strictly part of the project, <span class="giTag">&lt;teiCorpus&gt;</span> is used
+     solely to collect all of the TEI files in the project for analytical purposes, and
+     to generate this dictionary.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.teiHeader" target="_self">teiHeader</a></li>
+     <li><a href="#e.TEI" target="_self">TEI</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.teiHeader">
+            <div class="header"><span class="name">teiHeader</span><span class="gloss"><span class="divider"> | </span>TEI header</span><span class="count">339</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">supplies the descriptive and declarative information making up an electronic title
+     page
+     for every TEI-conformant document. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teiHeader.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">encloses the great majority of the descriptive metadata for
+     each document, outside of the <span class="giTag">&lt;text&gt;</span> element.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.teiCorpus" target="_self">teiCorpus</a></li>
+     <li><a href="#e.TEI" target="_self">TEI</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.fileDesc" target="_self">fileDesc</a></li>
+     <li><a href="#e.encodingDesc" target="_self">encodingDesc</a></li>
+     <li><a href="#e.profileDesc" target="_self">profileDesc</a></li>
+     <li><a href="#e.revisionDesc" target="_self">revisionDesc</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.text">
+            <div class="header"><span class="name">text</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a single text of any kind, whether unitary or composite, for example a poem
+     or
+     drama, a collection of essays, a novel, a dictionary, or a corpus sample. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-text.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">contains the text transcription for the TEI file.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.TEI" target="_self">TEI</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.body" target="_self">body</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.title">
+            <div class="header"><span class="name">title</span><span class="count">408</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a title for any kind of work. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-title.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Within <span class="giTag">&lt;teiHeader&gt;</span>, <span class="giTag">&lt;title&gt;</span> contains a
+     plain-english title of a letter. •  Within <span class="giTag">&lt;text&gt;</span>, <span class="giTag">&lt;title&gt;</span> is used to tag
+     references to books, periodicals, and other types of bibliographic materials
+     referenced within the letters. At this time, a bibliography has not yet been
+     formed, so a <span class="attTag">@ref</span> attribute is not being added to the these
+     <span class="giTag">&lt;title&gt;</span> elements. </span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;title</span><span class="xmlTag">&gt;</span> Letter from John Northwind to Marie Contoso, 1 February
+     1832 <span class="xmlTag">&lt;/title&gt;</span> 
+   <span class="xmlTag">&lt;title</span><span class="xmlAttName"> type=</span><span class="xmlAttVal">"periodical"</span><span class="xmlTag">&gt;</span> Redmond Review <span class="xmlTag">&lt;/title&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="attributes"><span class="label">Attributes: </span><ul>
+     <li><a href="#a.ref" target="_self">@ref</a></li>
+     <li><a href="#a.type" target="_self">@type</a></li>
+  </ul>
+               </div>
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.titleStmt" target="_self">titleStmt</a></li>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+     <li><a href="#e.lb" target="_self">lb</a></li>
+     <li><a href="#e.hi" target="_self">hi</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.titleStmt">
+            <div class="header"><span class="name">titleStmt</span><span class="gloss"><span class="divider"> | </span>title statement</span><span class="count">339</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">groups information about the title of a work and those responsible for its content. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-titleStmt.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">within the project header template, encloses the tags
+     representing the primary title for the file.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.fileDesc" target="_self">fileDesc</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.title" target="_self">title</a></li>
+     <li><a href="#e.respStmt" target="_self">respStmt</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.unclear">
+            <div class="header"><span class="name">unclear</span><span class="count">19</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">contains a word, phrase, or passage which cannot be transcribed with certainty because
+     it
+     is illegible or inaudible in the source. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-unclear.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used when the editor is uncertain regarding the transcription
+     of a word, perhaps due to its legibility.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+     <li><a href="#e.del" target="_self">del</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="e.w">
+            <div class="header"><span class="name">w</span><span class="gloss"><span class="divider"> | </span>word</span><span class="count">13</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">represents a grammatical (not necessarily orthographic) word. <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-w.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used to enclose all parts of a word when another xml tag
+     (such as <span class="giTag">&lt;supplied&gt;</span>) has been added inside of the word boundary, and to
+     circumvent potential white-space formatting issues when the XML text is rendered
+     in html.</span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode"> his voice has <span class="xmlTag">&lt;w</span><span class="xmlTag">&gt;</span> be <span class="xmlTag">&lt;lb</span><span class="xmlTag">/&gt;</span> <span class="xmlTag">&lt;supplied</span><span class="xmlTag">&gt;</span> com <span class="xmlTag">&lt;/supplied&gt;</span> e <span class="xmlTag">&lt;/w&gt;</span>  harsh or hoarse  </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.ab" target="_self">ab</a></li>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li><a href="#e.lb" target="_self">lb</a></li>
+     <li><a href="#e.supplied" target="_self">supplied</a></li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <hr />
+         <div class="entry" id="a.agent">
+            <div class="header"><span class="name">@agent</span><span class="count">16</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">categorizes the cause of the damage, if it can be identified.att.damaged <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.damaged.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used with <span class="giTag">&lt;gap&gt;</span> to identify the source of the
+     damage<span class="usage_label"> Usage: </span><span class="usage"><span class="attTag">@agent</span> is always required with <span class="giTag">&lt;gap&gt;</span>. Acceptable
+        values are "stamp", "hole", or "seal". If another cause is identified, check with
+        the TEI Manager to determine the best approach.</span></span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.gap" target="_self">gap</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>stamp hole illegible seal</li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="a.cert">
+            <div class="header"><span class="name">@cert</span><span class="gloss"><span class="divider"> | </span>certainty certainty</span><span class="count">236</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">signifies the degree of certainty associated with the intervention or interpretation.att.global.responsibility <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.responsibility.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">In cases where the transcriber is less than one-hundred
+     percent certain regarding the identify of an individual or place tagged.<span class="usage_label"> Usage: </span><span class="usage">use "medium" when something has been probably or likely identified
+        correctly, and use "low" when it is only possible or maybe. In our project, "high"
+        is never used—in these cases the <span class="attTag">@cert</span> tag is omitted altogether.</span></span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+     <li><a href="#e.handShift" target="_self">handShift</a></li>
+     <li><a href="#e.supplied" target="_self">supplied</a></li>
+     <li><a href="#e.name" target="_self">name</a></li>
+     <li><a href="#e.placeName" target="_self">placeName</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>medium low unknown</li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="a.form">
+            <div class="header"><span class="name">@form</span><span class="count">338</span></div>
+            <div class="descriptions">
+               <div><span class="label">Project: </span><span class="local_description">Used within <span class="giTag">&lt;objectDesc&gt;</span> to encode the category of
+     physical form being described.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.objectDesc" target="_self">objectDesc</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>letter</li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="a.ident">
+            <div class="header"><span class="name">@ident</span><span class="gloss"><span class="divider"> | </span>identifier</span><span class="count">1687</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">supplies the identifier by which this element may be referenced.att.identified <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.identified.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used within the project header template to identify the
+     prefixes which link to the -ography files, and to encode the default language of
+     the document.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.prefixDef" target="_self">prefixDef</a></li>
+     <li><a href="#e.language" target="_self">language</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>psn pla npp bib en fr ge</li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="a.matchPattern">
+            <div class="header"><span class="name">@matchPattern</span><span class="count">1346</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">specifies a regular expression against which the values of other attributes
+     can be matched.att.patternReplacement <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.patternReplacement.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Found within the project header template, contains a regular
+     expression used to match prefix values for the -ography files.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.prefixDef" target="_self">prefixDef</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>([a-z]+)</li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="a.n">
+            <div class="header"><span class="name">@n</span><span class="gloss"><span class="divider"> | </span>number</span><span class="count">2780</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">gives a number (or other label) for an element, which is not necessarily unique within
+     the document.att.global <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Within <span class="giTag">&lt;pb&gt;</span>, indicates the page number of the text
+     following the <span class="giTag">&lt;pb&gt;</span> tag. • Within <span class="giTag">&lt;supplied&gt;</span>, <span class="attTag">@n</span> (with a value of
+     "orphan") is being used in an experimental fashion to identify small clippings of
+     text attached to wax seals. • Within <span class="giTag">&lt;seg&gt;</span>, <span class="attTag">@n</span> is being used in an
+     experimental fashion to describe the location of marginalia. • Within <span class="giTag">&lt;graphic&gt;</span>, indicates the corresponding page (or
+     addition) number respresented by the image file. • Within <span class="giTag">&lt;rendition&gt;</span>, links to an associated style in
+     TEI Boilerplate.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.graphic" target="_self">graphic</a></li>
+     <li><a href="#e.rendition" target="_self">rendition</a></li>
+     <li><a href="#e.pb" target="_self">pb</a></li>
+     <li><a href="#e.supplied" target="_self">supplied</a></li>
+     <li><a href="#e.seg" target="_self">seg</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>[string]</li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="a.reason">
+            <div class="header"><span class="name">@reason</span><span class="count">23</span></div>
+            <div class="descriptions">
+               <div><span class="label">Project: </span><span class="local_description">Used with <span class="giTag">&lt;supplied&gt;</span> to identify the source of the
+     damage, if applicable.<span class="see_also_label"> See also: </span><span class="see_also"><a href="#a.agent">@agent</a></span></span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.supplied" target="_self">supplied</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>stamp hole wax-seal</li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="a.ref">
+            <div class="header"><span class="name">@ref</span><span class="gloss"><span class="divider"> | </span>reference</span><span class="count">6285</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">provides an explicit means of locating a full definition for the entity being named
+     by
+     means of one or more URIs.att.canonical <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.canonical.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">The <span class="attTag">@ref</span> attribute takes an identifier that links
+     elements such as <span class="giTag">&lt;persName&gt;</span> and <span class="giTag">&lt;placeName&gt;</span> to their associated
+     records in the project's -ography files.<span class="usage_label"> Usage: </span><span class="usage">Each identifier within <span class="attTag">@ref</span> must be prefixed by the code
+        that identifies the associated -ography file, followed by a colon. When multiple
+        identifiers are used within a single <span class="attTag">@ref</span> (e.g., families or groups of
+        people), separate the identifiers with a space, and provide the prefixes for
+        each.</span></span><div class="examples"><span class="label">Example(s): </span><pre class="teiCode">
+   <span class="xmlTag">&lt;name</span><span class="xmlAttName"> type=</span><span class="xmlAttVal">"group"</span><span class="xmlAttName"> ref=</span><span class="xmlAttVal">"psn:WEEt_1033 psn:WEEh_1032"</span><span class="xmlTag">&gt;</span> Weeds <span class="xmlTag">&lt;/name&gt;</span> 
+   <span class="xmlTag">&lt;persName</span><span class="xmlAttName"> ref=</span><span class="xmlAttVal">"psn:MILe_616"</span><span class="xmlTag">&gt;</span> Grandpa's <span class="xmlTag">&lt;/persName&gt;</span> 
+   <span class="xmlTag">&lt;persName</span><span class="xmlAttName"> ref=</span><span class="xmlAttVal">"psn:unknown"</span><span class="xmlTag">&gt;</span> Mr. F <span class="xmlTag">&lt;/persName&gt;</span> 
+                </pre></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.persName" target="_self">persName</a></li>
+     <li><a href="#e.placeName" target="_self">placeName</a></li>
+     <li><a href="#e.name" target="_self">name</a></li>
+     <li><a href="#e.resp" target="_self">resp</a></li>
+     <li><a href="#e.title" target="_self">title</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>[unique identifier]</li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="a.rend">
+            <div class="header"><span class="name">@rend</span><span class="gloss"><span class="divider"> | </span>rendition</span><span class="count">1272</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">indicates how the element in question was rendered or presented in the source text.att.global.rendition <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.rendition.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Indicates the type of visually-distinct formatting identified
+     by <span class="giTag">&lt;hi&gt;</span>. Acceptable values include "superscript", "underline",
+     "underdoubleline", and "subscript".<span class="usage_label"> Usage: </span><span class="usage">Acceptable values include "superscript", "underline",
+        "underdoubleline", and "subscript".</span></span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.hi" target="_self">hi</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>[string]</li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="a.replacementPattern">
+            <div class="header"><span class="name">@replacementPattern</span><span class="count">1346</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">specifies a replacement pattern, that is, the skeleton of a relative or absolute URI
+     containing references to groups in
+     the matchPattern which, once subpattern substitution
+     has been performed, complete the URI.att.patternReplacement <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.patternReplacement.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used by <span class="giTag">&lt;prefixDef&gt;</span> to define a prefix that can be
+     used in @ref attributes to link to the project's -ography files.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.prefixDef" target="_self">prefixDef</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>[string]</li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="a.scheme">
+            <div class="header"><span class="name">@scheme</span><span class="count">1352</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">identifies the language used to describe the rendition.att.styleDef <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.styleDef.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Within the project header template, used by
+     <span class="giTag">&lt;rendition&gt;</span> to identify the styling mechanism (i.e., CSS) used by <a href="http://teiboilerplate.org/" target="_blank">TEI Boilerplate</a>.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.rendition" target="_self">rendition</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>css</li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="a.scribe">
+            <div class="header"><span class="name">@scribe</span><span class="count">180</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">gives a name or other identifier for the scribe
+     believed to be responsible for this hand.att.handFeatures <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.handFeatures.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Similar in function to <span class="attTag">@ref</span>, <span class="attTag">@scribe</span>
+     takes an identifier that links to the personography record of the individual to
+     the associated (following) handwriting.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.handShift" target="_self">handShift</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>postmaster WORl_1068 COLj_4399 psn:GRIf_386 SEWw_846 psn:NORw_846 SEWs_4480 unknown
+        psn:CANl_206 psn:NORf_827 psn:NORb_816 psn:NORs_4480 psn:unknown psn:NORf_829 psn:NORa_815
+        psn:WORl_1068 psn:NORw_847 SEWf_827
+     </li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="a.type">
+            <div class="header"><span class="name">@type</span><span class="count">2063</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">indicates what kind of phenomenon is being noted in the passage.att.interpLike <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.interpLike.html">[more]</a> • characterizes the element in some sense, using any convenient
+     classification scheme or typology.att.typed <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.typed.html">[more]</a> • indicates type of entry, in dictionaries with multiple types.att.entryLike <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.entryLike.html">[more]</a> • classifies the reading according to some useful typology.att.textCritical <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.textCritical.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used to assign elements to particular categories—for more
+     information, see the documentation for those particular elements.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.correspAction" target="_self">correspAction</a></li>
+     <li><a href="#e.date" target="_self">date</a></li>
+     <li><a href="#e.change" target="_self">change</a></li>
+     <li><a href="#e.name" target="_self">name</a></li>
+     <li><a href="#e.stamp" target="_self">stamp</a></li>
+     <li><a href="#e.title" target="_self">title</a></li>
+     <li><a href="#e.seg" target="_self">seg</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>sent creation received transcription revision publication group postmark short margin</li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="a.url">
+            <div class="header"><span class="name">@url</span><span class="gloss"><span class="divider"> | </span>uniform resource locator uniform resource locator</span><span class="count">267</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">specifies the URL from which the media concerned may be obtained.att.resourced <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.resourced.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used with graphic, provides the filename of the corresponding
+     manuscript image.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.graphic" target="_self">graphic</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>[uri]</li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="a.when">
+            <div class="header"><span class="name">@when</span><span class="count">1260</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">supplies the value of the date or time in a standard form,
+     e.g. yyyy-mm-dd.att.datable.w3c <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.datable.w3c.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">Used to identify date-related information in a
+     machine-readable form.<span class="usage_label"> Usage: </span><span class="usage">Dates added must be encoded according to the ISO 8601
+        standard.</span><span class="see_also_label"> See also: </span><span class="see_also"><a href="#e.notBefore">notBefore</a></span></span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.date" target="_self">date</a></li>
+     <li><a href="#e.change" target="_self">change</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>[date]</li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="a.who">
+            <div class="header"><span class="name">@who</span><span class="count">777</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">indicates the person, or group of people, to whom the element content is ascribed.att.ascribed <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.ascribed.html">[more]</a></span></div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.change" target="_self">change</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>npp:kac npp:mhr npp saz mhr npp:saz rag npp:cef npp:dgj npp:crb npp:alc npp:mhr npp:anb
+        npp:gew npp:dgj npp:djg npp:sss djg crb mep npp:mep npp:rew npp:ekk npp:sss npp:jds
+        npp:lbk npp:anb npp:mep npp:ekk npp:rag npp:dxt dxt npp:keh npp:gew npp:kle npp:crb
+        npp:alc npp:tps npp:sgl npp:mah npp:gwg npp:ahf npp:mmd npp:ajm
+     </li>
+  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="entry" id="a.xml:id">
+            <div class="header"><span class="name">@xml:id</span><span class="gloss"><span class="divider"> | </span>identifier</span><span class="count">342</span></div>
+            <div class="descriptions">
+               <div><span class="label">P5 Guidelines: </span><span class="tei_description">provides a unique identifier for the element bearing the attribute.att.global <a target="_blank" href="http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.html">[more]</a></span></div>
+               <div><span class="label">Project: </span><span class="local_description">A unique identifier for the manuscript page.</span><div class="examples"></div>
+               </div>
+            </div>
+            <div class="context">
+               <div class="parents"><span class="label">Contained by: </span><ul>
+     <li><a href="#e.TEI" target="_self">TEI</a></li>
+     <li><a href="#e.rendition" target="_self">rendition</a></li>
+  </ul>
+               </div>
+               <div class="children"><span class="label">May contain: </span><ul>
+     <li>[unique identifier]</li>
+  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div><a href="#" class="go-top">Back to top</a></div>
+   </body>
+</html>

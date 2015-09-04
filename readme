@@ -23,8 +23,8 @@ Special thanks to:
  * Sean Morris, University of Rochester
 
 II: SYSTEM REQUIREMENTS
-* A recent version of the oXygen XML Editor, or Saxon HE 9.* or later.
-The instructions in this readme file assume that you are using oXygen.
+* A recent version of the <oXygen/> XML Editor, or Saxon HE 9.* or later.
+The instructions in this readme file assume that you are using <oXygen/>.
 
 III: INSTALLATION
 The Data Dictionary Generator includes three files, which can be saved anywhere
@@ -40,7 +40,7 @@ same folder.
    alongside definitions drawn from the TEI guidelines.
 
 IV: CONFIGURATION
-In oXygen, the DDG operates using oXygen's Transformation Scenarios. This 
+In <oXygen/>, the DDG operates using oXygen's Transformation Scenarios. This 
 readme assumes basic familiarity with Transformation Scenarios, however 
 detailed video tutorials are available at http://humanities.lib.rochester.edu.
 1) In Oxygen, Configure a new transformation scenario of the type 
@@ -117,3 +117,13 @@ running the script from the command line:
    be generated as a TEI file, so users can provide their own styling
  * P5source: location of the TEI P5 Guidelines file (p5subset.xml)
  * teiOutPath: location of the TEI file, if using TEI output.
+ 
+VIII: KNOWN ISSUES
+ * Innacurate spacing in example code display: This should (hopefully) be
+   addressed in an updated release. At this time, this issue can be fixed by
+   hand by editing the HTML output file.
+ * Slow performance with very large TEI files: This script may take twenty
+   minutes or longer to run on TEI files with tens to hundreds of thousands
+   of lines of code. In these cases it may be best to install a command-line
+   version of Saxon (available from http://saxon.sourceforge.net), and run the
+   script directly from the shell.
